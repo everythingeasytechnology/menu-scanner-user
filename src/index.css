@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #1E2A3A;
+  --color-accent: #F26B3A;
+  --color-secondary-teal: #0E7C7B;
+  --color-body-text: #1E293B;
+  --color-muted-text: #64748B;
+  --color-background-white: #FFFFFF;
+  --color-card-neutral: #F4F6F8;
+  --color-card-warm: #FDF1EC;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  
+  --shadow-soft: 0 4px 20px -2px rgba(30, 42, 58, 0.05), 0 2px 8px -1px rgba(30, 42, 58, 0.03);
+  --shadow-soft-lg: 0 10px 30px -4px rgba(30, 42, 58, 0.08), 0 4px 12px -2px rgba(30, 42, 58, 0.04);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-body-text font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #FFFFFF;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold text-primary-dark;
+  }
+}
+
+/* CSS Utilities & Animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(0.98);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Stepper transitions */
+.stepper-btn {
+  @apply active:scale-95 transition-all duration-150;
+}
