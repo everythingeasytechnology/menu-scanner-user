@@ -1,5 +1,5 @@
 export const BRAND = {
-  companyName: "EverythingEasy",
+  companyName: "",
   tagline: "Smart Menu System",
   logoUrl: "/assets/logo.svg",
 };
